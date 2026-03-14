@@ -1,0 +1,75 @@
+/* Card.css */
+.product-card-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.product-card-dark:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.product-card-dark img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.product-card-dark h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0 0 4px 0;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-card-dark .brand {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-card-dark .price-stock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.product-card-dark strong {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.product-card-dark .in-stock {
+    color: #4caf50;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.product-card-dark .out-of-stock {
+    color: #f44336;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(244, 67, 54, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}

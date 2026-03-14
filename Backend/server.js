@@ -15,8 +15,8 @@ app.use((req, res, next) => {
 // MongoDB local connection
 mongoose.connect(process.env.MONGO_URI)
 
-.then(() => console.log("✅ MongoDB connected locally"))
-.catch((err) => console.error("❌ MongoDB error:", err));
+  .then(() => console.log("✅ MongoDB connected locally"))
+  .catch((err) => console.error("❌ MongoDB error:", err));
 
 // Load your routes
 const authRoutes = require('./routes/auth');
@@ -32,6 +32,9 @@ app.use('/api/cart', cartRoutes);
 
 const productRoutes = require('./routes/productRoutes');
 app.use('/api', productRoutes);
+
+const orderRoutes = require('./routes/order');
+app.use('/api/order', orderRoutes);
 
 app.use('/api/user', require('./routes/user'));
 

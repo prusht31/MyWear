@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const nodemailer = require("nodemailer");
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+require('dotenv').config();
 
 // Setup Nodemailer
 const transporter = nodemailer.createTransport({
@@ -80,9 +81,9 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    if (!user.isVerified) {
-      return res.status(403).json({ message: "Please verify your email first." });
-    }
+    // if (!user.isVerified) {
+    //   return res.status(403).json({ message: "Please verify your email first." });
+    // }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
